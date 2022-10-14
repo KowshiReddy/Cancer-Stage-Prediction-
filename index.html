@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    .navbar-text h1{
+        color:#fff;
+        font-size:40px;
+        align-content:center;
+    }
+
+    body{
+        background-color: grey;
+    }
+
+    form {
+        margin-top:50px;
+        margin: auto;
+        width:35%;
+        ;
+    }
+    .l{
+        margin: auto;
+        width: 35%;
+        border:1px solid black;
+        background-color: burlywood;
+        color: black;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+        transition: 0.3s;
+        ;
+
+    }
+</style>
+<head>
+    <title>Cancer Prediction </title>
+    <h5>Predict the stage of cancer by just sitting at home ! Save lives earlier.......</h5>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    
+</head>
+
+<body>
+
+    
+    <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-text">
+            <h1>CANCER LEVEL PREDICTION </h1>
+            
+
+        </span>
+
+    </nav>
+
+    <form action="{{ url_for('main')}}" method="POST">
+        <div class="form-group">
+
+            
+            <h5> IF YOU HAVE THE SYMTOMPS JUST ENTER 2 IN THE BOXES ELSE ENTER 1</h5>
+        
+            
+            <br>hairfall:<br>
+
+            <input name="hairfall" type="number" class="form-control" required>
+            <br>
+
+            <br>fatigue:<br>
+
+            <input name="fatigue" type="number" class="form-control" required>
+            <br>
+
+            <br>lump:<br>
+
+            <input name="lump" type="number" class="form-control" required>
+            <br>
+
+            <br>weightloss:<br>
+
+            <input name="weightloss" type="number" class="form-control" required>
+            <br>
+
+            <br>fever:<br>
+
+            <input name="fever" type="number" class="form-control" required>
+            <br>
+
+            <br>skinchanges:<br>
+
+            <input name="skinchanges" type="number" class="form-control" required>
+            <br>
+
+            <br>pains:<br>
+
+            <input name="pains" type="number" class="form-control" required>
+            <br>
+
+            <br>bleeding:<br>
+
+            <input name="bleeding" type="number" class="form-control" required>
+            <br>
+
+            <br>smoking:<br>
+
+            <input name="smoking" type="number" class="form-control" required>
+            <br>
+
+            <br>alcoholuse:<br>
+
+            <input name="alcoholuse" type="number" class="form-control" required>
+            <br>
+
+            <br>indigestion:<br>
+
+            <input name="indigestion" type="number" class="form-control" required>
+            <br>
+
+            <br>
+            <input type="submit" value="Submit" class="btn btn-primary" onclick="show()">
+
+
+
+        </div>
+
+    </form>
+
+    <br>
+
+    <div class="l" align="center">
+        {% if level %} 
+        <h1>Cancer Predicted:</h1>
+        <p style="font-size:50px">{{ level }}</p>
+        {% endif %}
+
+    </div>
+
+      
+</body>
+
+</html>
